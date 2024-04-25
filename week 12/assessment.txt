@@ -1,0 +1,3 @@
+In the realm of programming, the ability to interact with files is an indispensible skill. whether its reading data from a text file, processing 
+infromation from a csv file, or writing output to binary file, file handling forms the backbone of many applications.
+This is just a dummy text file.

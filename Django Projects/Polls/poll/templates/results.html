@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        li:hover {
+            background-color: #f0f0f0;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Voting Results</h1>
+    <h2>{{ question.question_text }}</h2>
+    
+    <ul>
+    {% for choice in question.choice_set.all %}
+        <li>
+            {{ choice.choice_text }}:
+            {{ choice.votes }} vote{{ choice.votes|pluralize }}
+        </li>
+    {% endfor %}
+    </ul>
+    
+    <a href="{% url 'poll:detail' question.id %}">Back to Question</a>
+</body>
+</html>

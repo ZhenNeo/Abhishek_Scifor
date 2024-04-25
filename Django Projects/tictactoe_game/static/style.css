@@ -1,0 +1,46 @@
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #333;
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s;
+}
+
+.cell:hover {
+    background-color: #ccc;
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+h1 {
+    text-align: center;
+}
+
+.alert {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.message {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: #ff6347; /* Red color */
+    margin-top: 20px;
+}
